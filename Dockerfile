@@ -58,14 +58,6 @@ RUN tar -C /usr/local -xvzf go1.*.tar.gz
 RUN export PATH=$PATH:/usr/local/go/bin
 
 
-RUN git clone https://github.com/vlakhani28/bbht.git
-RUN chmod +x bbht/install.sh
-RUN ./bbht/install.sh
-RUN mv bbht/run-after-go.sh /root/tools
-RUN chmod +x /root/tools/run-after-go.sh
-
-
-
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
 RUN chmod +x /app/run.sh
